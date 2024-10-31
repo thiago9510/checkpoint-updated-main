@@ -9,11 +9,17 @@ import Cadastro from "./components/Cadastro";
 import EditarUsuario from "./components/EditarUsuario";
 import { Modal } from "@mui/material";
 import "./App.css";
-import {  toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import Login from "./components/Login";
 import CustomToastContainer from "./components/toastSucess";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+
+
+import tost from 'react-toastify/dist/ReactToastify.css';
+import { ToastType } from "./components/types/global";
+
+
 
 const Container = styled.div`
     display: flex;
@@ -105,6 +111,13 @@ const App = () => {
     const handleStatusModal = () => setStatusModal((prev) => !prev);
     const handleCadastroModal = () => setStatusCadastroModal((prev) => !prev);
 
+
+    // Função para mostrar notificações
+
+    const notify = (message: string, type: ToastType) =>{
+        toast[type](message)
+    }
+
     return (
         <>
             <Router>
@@ -126,7 +139,7 @@ const App = () => {
                             <Route path="/" element={<MainPage statusModal={statusModal} onCloseModal={handleStatusModal} />} />
                             <Route path="/cadastro" element={<Cadastro />} />
                             <Route path="/editar-usuario" element={<EditarUsuario />} />
-                            <Route path="/login" element={<Login />} />
+                            <Route path="/login" element={<Login onNotify={notify}/>} />
                         </Routes>
                         {/* CadastroModal controlado pelo statusCadastroModal */}
                         <CadastroModal open={statusCadastroModal} onClose={handleCadastroModal} />
@@ -153,7 +166,7 @@ const MainPage: React.FC<MainPageProps> = ({ statusModal, onCloseModal }) => (
                 onCloseModal();
                 toast.success('🦄 Wow so easy!',
                     <CustomToastContainer />
-                    );
+                );
             }}
             title="Bater Ponto"
             buttonLabel="Registrar"
@@ -232,10 +245,10 @@ const CadastroModal = ({ open, onClose }: { open: boolean; onClose: () => void }
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-               
+
             }}
         >
-         <div className="container" style={{ position: "relative", padding: "20px", backgroundColor: "white", borderRadius: "8px" }}>
+            <div className="container" style={{ position: "relative", padding: "20px", backgroundColor: "white", borderRadius: "8px" }}>
                 {/* Botão de fechar com ícone do Font Awesome */}
                 <button
                     onClick={onClose}

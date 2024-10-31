@@ -14,9 +14,9 @@ const CustomToastContainer: React.FC = () => {
       draggable
       pauseOnHover
       theme="light"
-      // transition={Bounce} // Se precisar usar, descomente e importe o Bounce
+    // transition={Bounce} // Se precisar usar, descomente e importe o Bounce
     />
   );
 };
 
-export default CustomToastContainer;
+export default CustomToastContainer
