@@ -1,0 +1,106 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('/src/assets/fundo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-left: 300px;
+  }
+  
+  /* Overlay para escurecer o fundo */
+  .container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  
+  .cadastroBox {
+    position: relative;
+    z-index: 2;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .title {
+    font-size: 24px;
+    color: #0066cc; /* Título "Check Point" em azul */
+  }
+  
+  .subtitle {
+    font-size: 18px;
+    color: #000; /* Texto preto */
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .inputGroup {
+    margin-bottom: 15px;
+    margin-right: 20px;
+    text-align: left;
+    color: #000;
+    padding-bottom: 40px;
+    margin: 20px;
+    padding: 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff; /* Fundo branco */
+    color: #000; /* Texto preto */
+  }
+  
+  input::placeholder {
+    color: #888; /* Placeholder cinza escuro */
+  }
+  
+  input:focus {
+    border-color: #0066cc;
+    outline: none;
+  }
+  
+  .cadastrarButton {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .cadastrarButton:hover {
+    background-color: #0056b3;
+  }
+  
