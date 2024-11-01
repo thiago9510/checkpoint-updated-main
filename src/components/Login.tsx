@@ -1,9 +1,5 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState } from "react";
 import styles from "./Login.module.css";
-
-import tost from 'react-toastify/dist/ReactToastify.css';
-
 import { ToastType } from "./types/global";
 import { useNavigate } from "react-router-dom";
 // minified version is also included
@@ -23,7 +19,7 @@ export const Login: React.FC<LoginProps> = ({ onNotify }) => {
         e.preventDefault();
         // Lógica de login pode ser adicionada aqui
         try {
-            const response = await fetch('http://localhost:3030/usuario/login', {
+            const response = await fetch('http://localhost:3335/usuario/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

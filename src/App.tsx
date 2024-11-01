@@ -9,14 +9,12 @@ import Cadastro from "./components/Cadastro";
 import EditarUsuario from "./components/EditarUsuario";
 import { Modal } from "@mui/material";
 import "./App.css";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import Login from "./components/Login";
-import CustomToastContainer from "./components/toastSucess";
+import CustomToastContainer from "./components/ToastSucess";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
-
-import tost from 'react-toastify/dist/ReactToastify.css';
 import { ToastType } from "./components/types/global";
 
 
